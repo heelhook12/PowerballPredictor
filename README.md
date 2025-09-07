@@ -1,20 +1,19 @@
-# Powerball Predictor & Analysis
+# 🎰 Powerball Predictor & Analysis 🎰
 
 ## Script 1: Basic Number Analysis & Prediction
 
 **Purpose:**
-Predict potential Powerball numbers based on historical draws since 2020. Provides “hot numbers,” “cold numbers,” and a weighted random pick.
+Want to see which numbers might be "lucky" based on past draws? This script predicts potential Powerball numbers using historical data since 2020. It gives you hot numbers, cold numbers, and a weighted random pick! 🍀
 
 **Features:**
-- Load CSV of Powerball draws (`Draw Date`, `Winning Numbers`, `Multiplier`).
-- Split winning numbers into 5 main numbers (N1–N5) and Powerball.
+- Load your Powerball CSV (`Draw Date`, `Winning Numbers`, `Multiplier`).
+- Split winning numbers into 5 main numbers (N1–N5) and the all-important Powerball.
 - Frequency Analysis:
-  - Hot numbers: most frequently drawn numbers.
-  - Cold numbers: least frequently drawn numbers.
+  - **Hot numbers**: the crowd favorites appearing most often.
+  - **Cold numbers**: those shy numbers that barely show up.
 - Weighted Random Pick:
-  - Generates a set of numbers based on the frequency distribution of past draws.
-- Python int conversion:
-  - Ensures all numbers are standard Python integers (no `numpy.int64`).
+  - Pick numbers based on past frequency. 
+
 
 **Usage Example:**
 ```bash
@@ -29,30 +28,27 @@ Weighted Random Pick: ([10, 15, 16, 58, 63], 17)
 ```
 
 **Notes:**
-- Numbers are unordered (Powerball rules).
-- Weighted random numbers are drawn separately for main numbers (1–69) and Powerball (1–26).
+- Order doesn’t matter for main numbers.
+- Powerball is picked separately (1–26).
 
 ---
 
-## Script 2: Advanced Data Analysis & Rolling Frequency Visualization
+## Script 2: Advanced Data Analysis & Rolling Frequency Visualization 📊
 
 **Purpose:**
-Perform deeper analysis on historical Powerball data. Includes **sum/range analysis** and **rolling frequency analysis** to visualize trends.
+Dive deep into the numbers! This script gives you visual insights, rolling trends, and helps show which numbers are "hot" or "cold" over time.
 
 **Features:**
 - Load CSV and split winning numbers into N1–N5 and Powerball.
-- Sum & Range Analysis:
-  - Computes the sum of the 5 main numbers per draw.
-  - Counts numbers in “low” range (1–35) and “high” range (36–69).
-  - Produces histogram of sums and bar chart for low/high counts.
-- Rolling Frequency Analysis:
-  - Uses a rolling window (default 50 draws) to count frequency of each number.
-  - Prints top 5 numbers in the most recent window.
-  - Generates a heatmap showing the frequency of all main numbers across rolling windows.
-  - Colors indicate “hot” and “cold” numbers over time.
-- Optional Extensions:
-  - Can add rolling analysis for Powerball separately.
-  - Can adjust window size to analyze shorter or longer periods.
+- **Sum & Range Analysis:**
+  - Compute the sum of main numbers per draw.
+  - Count low (1–35) vs high (36–69) numbers.
+  - Beautiful histogram of sums and a bar chart showing low/high frequency.
+- **Rolling Frequency Analysis:**
+  - Check number trends over the last N draws (default 50). 
+  - See the top 5 numbers in recent windows.
+  - Heatmap of number frequency over rolling windows
+- Optional: Add Powerball analysis and adjust window size to zoom in or out.
 
 **Usage Example:**
 ```bash
@@ -63,8 +59,7 @@ python analysis.py
 ```
 Top 5 numbers in last 50 draws: [(3, 16), (2, 12), (6, 9), (5, 9), (4, 9)]
 ```
-- The heatmap provides a visual representation of number frequency over time.
-- Histograms and bar charts help visualize number distributions and trends.
+- Charts make using eyes easy.
 
 **Dependencies:**
 - pandas
@@ -72,19 +67,3 @@ Top 5 numbers in last 50 draws: [(3, 16), (2, 12), (6, 9), (5, 9), (4, 9)]
 - seaborn
 
 ---
-
-## Summary Comparison
-
-| Feature | Script 1 | Script 2 |
-|---------|----------|----------|
-| Predict hot/cold numbers | ✅ | ✅ (with rolling) |
-| Weighted random pick | ✅ | ✅ (optional) |
-| Rolling analysis / trends | ❌ | ✅ |
-| Visualizations | ❌ | ✅ (histogram, bar chart, heatmap) |
-| Python int conversion | ✅ | ✅ |
-| Powerball included | ✅ | ✅ |
-
----
-
-This README provides a clear overview of both scripts, their features, outputs, and usage instructions.
-
